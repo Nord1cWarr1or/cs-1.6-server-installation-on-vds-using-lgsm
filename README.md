@@ -677,7 +677,7 @@ sudo apt install nginx
 ```
 	# Быстрая загрузка для Counter-Strike
 	location /cstrike/ {
-		alias   /home/cs/knife/serverfiles/cstrike/;
+		alias   /home/public_server/serverfiles/cstrike/;
 		autoindex on;
 
 		location ~* (\.wad$|(maps|sprites|models|gfx|sound|media|overviews)/.*(bsp|mdl|spr|wav|mp3|bmp|tga|txt|res)$) {
