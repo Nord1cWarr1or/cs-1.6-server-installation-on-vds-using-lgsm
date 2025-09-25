@@ -665,6 +665,64 @@ Start Line: ./hlds_linux -game cstrike -strictportbind +ip 0.0.0.0 -port 27015 +
 End of crash report
 ----------------------------------------------
 ```
+
+
+Альтернативный вариант!!! Через отключение сервиса apport.
+
+Проверяем вывод:
+
+```
+cat /proc/sys/kernel/core_pattern
+```
+Получаем что то вроде:
+
+```
+/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -F%F -- %E
+```
+
+Сервис Apport работает. Нам нужно его выключить для корректного получения крашей.
+```
+Вводим: systemctl stop apport.service 
+Проверяем вывод: cat /proc/sys/kernel/core_pattern
+Получаем вывод: core
+```
+Если вы получили вывод в консоль "core" вы все верно настроили. Можно попробовать получить краш с помощь плагина описанного выше.
+
+Что бы сервис не включался при перезагрузке сервера (не кс) нужно выключить сервис
+
+```
+systemctl disable apport
+```
+Получаем вывод:
+
+```
+apport.service is not a native service, redirecting to systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install disable apport
+```
+Вы все сделали верно. Сервис выключен и не включится после перезагрузки.
+Можно проверить с помощью плагина:
+
+```
+#include <amxmodx>
+#include <fakemeta>
+
+public plugin_init()
+{
+    register_plugin("Crash", "1.0", "Dev-CS Team");
+
+    // Generate exception code 0xC0000005
+    set_task(1.0, "GenerateExceptionCode");
+}
+
+public GenerateExceptionCode()
+{
+    server_print("[Crash]: I call segmentation fault! Exception code: 0xC0000005");
+
+    // Put invalid pointer that will be generate access violation exception
+    set_tr2(0xDEADBEEF, TR_InWater, true);
+}
+```
+
 Попробуйте перечитать и выполнить заново шаг с активацией полных краш-логов.
 
 ##### Литература
