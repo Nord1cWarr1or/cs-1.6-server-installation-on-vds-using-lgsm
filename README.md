@@ -1,5 +1,17 @@
 # Установка и первичная настройка игрового сервера Counter-strike на VDS
 
+[![GitHub stars](https://img.shields.io/github/stars/Nord1cWarr1or/cs-1.6-server-installation-on-vds-using-lgsm?style=flat-square&labelColor=1A1B26&color=24283B)](https://github.com/Nord1cWarr1or/cs-1.6-server-installation-on-vds-using-lgsm/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Nord1cWarr1or/cs-1.6-server-installation-on-vds-using-lgsm?style=flat-square&labelColor=1A1B26&color=24283B)](https://github.com/Nord1cWarr1or/cs-1.6-server-installation-on-vds-using-lgsm/network/members)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Nord1cWarr1or/cs-1.6-server-installation-on-vds-using-lgsm?style=flat-square&labelColor=1A1B26&color=24283B)](https://github.com/Nord1cWarr1or/cs-1.6-server-installation-on-vds-using-lgsm/commits/main)
+
+## Содержание
+
+- [Часть 0. Предисловие](#часть-0-предисловие)
+- [Часть 1. Первичная настройка системы](#часть-1-первичная-настройка-системы)
+- [Часть 2. Установка и настройка скрипта LGSM](#часть-2-установка-и-настройка-скрипта-lgsm)
+- [Часть 3. Установка основных дополнений. Настройка игрового сервера](#часть-3-установка-основных-дополнений-настройка-игрового-сервера)
+- [Часть 4. Дополнительные инструменты для сервера. Рекомендации](#часть-4-дополнительные-инструменты-для-сервера-рекомендации)
+
 ## Часть 0. Предисловие
 
 ### Copyright ©
